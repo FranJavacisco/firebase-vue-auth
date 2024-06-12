@@ -1,4 +1,4 @@
-# firebase-vue-auth
+# desafio-firebase-2
 
 ## Project setup
 ```

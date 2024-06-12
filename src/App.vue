@@ -1,18 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav>
+    <router-link to="/signup">SignUp</router-link> |
+    <router-link to="/login">Login</router-link> |
+    <router-link to="/">Home</router-link> |
+    <!-- <router-link to="/about">About</router-link> -->
+  </nav>
+  <router-view />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<!-- <script>
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  // data() {
+  //   return {
+  //     private: false
+  //   }
+  // },
+  computed: {
+    isVisible( pathName ) {
+      const route = this.$router.options.routes.find(route => route.name === pathName );
+      console.log(route.meta.login);
+      return route.meta.login
+    }
   }
 }
-</script>
+
+
+
+</script> -->
 
 <style>
 #app {
@@ -21,6 +37,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
